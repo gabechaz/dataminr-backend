@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :users
 
   get '/questions', to: 'questions#index'
-  
+  get '/questions/:id', to: 'questions#show'
 
 
 

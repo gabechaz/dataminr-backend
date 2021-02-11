@@ -6,4 +6,10 @@ class QuestionsController < ApplicationController
         render json: questions
     end
 
+    def show
+        question = Question.find(params[:id])
+
+        render json: question
+    end
+
 end
