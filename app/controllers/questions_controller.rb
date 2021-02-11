@@ -16,9 +16,14 @@ class QuestionsController < ApplicationController
       render json: question
     end
   
-    private
-      def question_params
-        params.permit(:creator_id, :question, :reward, :option1, :option2)
-      end
+    def show
+        question = Question.find(params[:id])
 
+        render json: question
+    end
+    
+    private
+    def question_params
+      params.permit(:creator_id, :question, :reward, :option1, :option2)
+    end
 end

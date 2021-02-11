@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   get '/questions', to: 'questions#index'
   get '/questions/new', to: 'questions#new', as: 'new_question'
   post '/questions', to: 'questions#create'
+  get '/questions/:id', to: 'questions#show'
 
   get '/users', to: 'users#index'
   get '/users/new', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
 
+ 
 
 
 
