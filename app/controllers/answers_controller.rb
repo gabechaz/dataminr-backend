@@ -6,6 +6,10 @@ class AnswersController < ApplicationController
       render json: answer
     end
 
+    def show
+        answer = Answer.find(params[:id])
+        render json: answer
+    end
 
     def index
         answers = Answer.all
@@ -15,7 +19,7 @@ class AnswersController < ApplicationController
 
     private
     def answer_params
-        params.require(:answer).permit(:user_id, :question_id, :response)
+        params.permit(:user_id, :question_id, :response)
     end
 
 end

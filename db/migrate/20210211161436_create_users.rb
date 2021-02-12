@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :religion
       t.integer :currency
       t.string :username
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end

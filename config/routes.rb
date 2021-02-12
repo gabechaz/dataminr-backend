@@ -10,10 +10,14 @@ Rails.application.routes.draw do
 
   post '/answers', to: 'answers#post'
   get '/answers', to: 'answers#index'
+  get '/answers/:id', to: 'answers#show'
 
   get '/users', to: 'users#index'
   get '/users/new', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
+  get '/user/:id', to: 'users#show'
+
+  post "/login", to: "users#login"
 
  
 

@@ -9,6 +9,17 @@ end
     render json: user
   end
 
+  def show
+    user = User.find(params[:id])
+    render json: user
+  end
+
+  def login
+    user = User.first
+    render json: user
+  end
+
+
   private
     def user_params
       params.require(:user).permit(:name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :password)
