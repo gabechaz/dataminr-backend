@@ -15,10 +15,9 @@ end
   end
 
   def login
-    user = User.first
+    user = current_user
     render json: user
   end
-
 
   private
     def user_params
