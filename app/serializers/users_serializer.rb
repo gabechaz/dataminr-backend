@@ -1,5 +1,5 @@
 class UsersSerializer < ActiveModel::Serializer
-  attributes :id, :name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :test, :answers, :answers
+  attributes :id, :name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :test
   has_many :answers
   has_many :questions
 

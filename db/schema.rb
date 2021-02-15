@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_161719) do
     t.integer "currency"
     t.string "username"
     t.string "password_digest"
+    t.integer "wallet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.integer :currency
       t.string :username
       t.string :password_digest
+      t.integer :wallet
 
       t.timestamps
     end

@@ -15,16 +15,14 @@ Question.create(question:'Do you shop more during the daytime or the evening?', 
 end
 
 5.times do 
-    User.create(name: 'agent smith', age: 36)
+   x = User.create(name: 'agent smith', age: 36, password: 'abc123', wallet: 500, gender_identity: 'male')
 end
-questions = Question.all
-users = User.all
- answers = ['option1', 'option2']
 
- Answer.create(user_id: users.shuffle.first, question_id: questions.shuffle.first, response: answers.shuffle.first )
+
+
 30.times do 
-   x = Answer.create(user_id: users.shuffle.first.id, question_id: questions.shuffle.first.id, response: answers.shuffle.first )
-
+x = Answer.create(user_id: 1, question_id: 1, response: 'option1' )
+puts x.errors.full_messages
 end
 
 puts 'Nice seeds!'
