@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate, only: [:me]
+
   def index
     users = User.all
     render json: users
@@ -19,6 +21,11 @@ end
     render json: user
   end
 
+  def me
+    user = @current_user
+    render json: user
+  end
+  
 
   private
     def user_params

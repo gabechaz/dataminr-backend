@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
-before_action
-
-  def current_user
-    current_user=User.first
-    User.first
+  def authenticate
+    @current_user=User.first
   end
+  
 end
