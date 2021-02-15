@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action: authenticate, only [:me]
+  before_action :authenticate, only: [:me]
 
   def index
     users = User.all
@@ -17,12 +17,12 @@ end
   end
 
   def login
-    user = current_user
+    user = User.first
     render json: user
   end
 
   def me
-    user = current_user
+    user = @current_user
     render json: user
   end
   
