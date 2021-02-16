@@ -28,10 +28,6 @@ questions = Question.all
 users = User.all
 answers = ['option1', 'option2']
 
-30.times do 
-   x = Answer.create(user_id: 1, question_id: 1, response: answers.shuffle.first )
-
-end
 
 
 

@@ -33,6 +33,7 @@ end
   def update
     user = User.find(params[:id])
     user.update(wallet_params)
+    render json: user
   end
   
 
