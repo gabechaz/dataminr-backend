@@ -7,6 +7,10 @@ class Question < ApplicationRecord
     end
 
 
+    def answer_count
+        self.answers.length
+    end
+
     def option_1_count
         answer_count = self.answers.length
        

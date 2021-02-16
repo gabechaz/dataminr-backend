@@ -20,9 +20,9 @@ Question.create(creator_id: 1, question:'Do you like my haircut?', option1: 'Abs
 Question.create(creator_id: 1, question:'Who was the best president of the United States?', option1: 'Lincoln', option2: 'JFK', reward: 75)
 Question.create(creator_id: 1, question:'What is your favorite scent?', option1: 'Rosebuds', option2: 'Sharpie', reward: 60)
 
-User.create(name: 'Agent Smith', age: 36, ethnicity: "African American", gender_identity: "Male", political_party: "Libertarian", location: "Milwaukee, WI", religion: "Christian", currency: 100, username: 'smith', password: "123")
-User.create(name: 'Joann', age: 65, ethnicity: "Caucasian", gender_identity: "Female", political_party: "Democratic", location: "Brooklyn, NY", religion: "Jewish", currency: 200, username: 'joann', password: "123")
-User.create(name: 'Tony', age: 45, ethnicity: "Caucasian", gender_identity: "Male", political_party: "Republican", location: "North Caldwell, NJ", religion: "Catholic", currency: 500, username: 'tony', password: "123")
+User.create(name: 'Agent Smith', age: 36, ethnicity: "African American", gender_identity: "Male", political_party: "Libertarian", location: "Milwaukee, WI", religion: "Christian", currency: 100, username: 'smith', password: "123", wallet: 0)
+User.create(name: 'Joann', age: 65, ethnicity: "Caucasian", gender_identity: "Female", political_party: "Democratic", location: "Brooklyn, NY", religion: "Jewish", currency: 200, username: 'joann', password: "123", wallet: 0)
+User.create(name: 'Tony', age: 45, ethnicity: "Caucasian", gender_identity: "Male", political_party: "Republican", location: "North Caldwell, NJ", religion: "Catholic", currency: 500, username: 'tony', password: "123", wallet: 0)
 
 questions = Question.all
 users = User.all
