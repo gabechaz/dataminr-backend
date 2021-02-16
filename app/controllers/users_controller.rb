@@ -21,6 +21,10 @@ end
     render json: user
   end
 
+  def logout
+    @current_user = nil
+  end
+
   def me
     user = @current_user
     render json: user
