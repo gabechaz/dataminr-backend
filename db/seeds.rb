@@ -9,14 +9,14 @@ Question.destroy_all
 User.destroy_all
 Answer.destroy_all
 
-Question.create(question:'Is the earth flat?!', option1: 'Yes', option2: 'No', reward: 100)
+Question.create(question:'Is the earth flat?!', option1: 'Yes', option2: 'No', reward: 5, creator_id: 1)
 10.times do 
-Question.create(question:'Do you shop more during the daytime or the evening?', option1: 'Daytime', option2: 'Evening', reward: 200)
+Question.create(question:'Do you shop more during the daytime or the evening?', option1: 'Daytime', option2: 'Evening', reward: 5, creator_id: 1)
 end
 
-5.times do 
-   x = User.create(name: 'agent smith', age: 36, password: 'abc123', wallet: 500, gender_identity: 'male')
-end
+
+   x = User.create(name: 'agent smith', age: 36,username: 'smith', password: '123', wallet: 500, gender_identity: 'male')
+
 
 
 

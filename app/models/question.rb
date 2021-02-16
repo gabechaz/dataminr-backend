@@ -2,18 +2,25 @@ class Question < ApplicationRecord
     has_many :answers
     has_many :users, through: :answers
 
+    def creator
+        User.all.find(self.creator_id).name
+    end
 
 
     def option_1_count
         answer_count = self.answers.length
+       
         x =  self.answers.select do |answer|
                 answer.response == 'option1'
             end
+            # byebug
         if answer_count > 0 
-        x.length / answer_count * 100
+        int = x.length.to_f / answer_count.to_f * 100 
+        int.round
         else
             0
         end
+        # byebug
     end
 
     def option_2_count
@@ -21,6 +28,7 @@ class Question < ApplicationRecord
             answer.response == 'option2'
         end
         x.length
+        byebug
     end
 
 

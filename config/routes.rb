@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   get '/users/new', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
-  get '/user/:id', to: 'users#show'
+  patch '/users/:id', to: 'users#update'
+  get '/users/:id', to: 'users#show'
 
   post "/login", to: "users#login"
+
+  get "/me", to: "users#me"
+
 
  
 
