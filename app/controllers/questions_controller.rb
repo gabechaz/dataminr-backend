@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate, only: [:create]
 
     def index
         questions = Question.all
@@ -8,7 +9,7 @@ class QuestionsController < ApplicationController
 
     def create
       question = Question.new(question_params)
-      question.creator_id = current_user.id
+      question.creator_id = @current_user.id
       question.save
       render json: question
     end
