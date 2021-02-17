@@ -1,15 +1,8 @@
 class AnswersController < ApplicationController
 
     def post 
-
-        poss_answer = Answer.find_by(question_id: params[:question_id], user_id: params[:user_id])
-    if poss_answer
-        answer = Answer.update(answer_params)
-        render json: answer
-    else
       answer =  Answer.create(answer_params)
-      render json: answer
-    end
+     render json: answer.errors.full_messages
       
     end
 

@@ -3,14 +3,11 @@ class QuestionsController < ApplicationController
 
     def index
         questions = Question.all
-
         render json: questions
     end
 
     def create
-      question = Question.new(question_params)
-      question.creator_id = @current_user.id
-      question.save
+      question = Question.create(question_params)
       render json: question
     end
   

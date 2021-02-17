@@ -8,7 +8,8 @@ end
 
   def create
     user = User.create(user_params)
-    render json: user
+    token = JWT.encode({user_id: user.id}, 'codename', 'HS256')
+    render json: {user: UserSerializer.new(user), token: token}, status: :created
   end
 
   def show
@@ -17,8 +18,16 @@ end
   end
 
   def login
-    user = User.first
-    render json: user
+    user = User.find_by(username: params[:username])
+
+    if user && user.authenticate(params[:password])
+      # @current_user = user
+      token = JWT.encode({user_id: user.id}, 'codename', 'HS256')
+      render json: {user: UserSerializer.new(user), token: token}
+    else
+      render json: {errors: ['Try again loser!']}
+    end
+
   end
 
   def logout
@@ -44,6 +53,7 @@ end
     end
 
     def user_params
-      params.require(:user).permit(:name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :password)
+      params.permit(:name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :password, :wallet)
     end
 end
+# require(:user).
