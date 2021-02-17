@@ -2,7 +2,11 @@ class AnswersController < ApplicationController
 
     def post 
       answer =  Answer.create(answer_params)
-     render json: answer.errors.full_messages
+      if answer.errors
+        render json: answer.errors.full_messages
+      else 
+        render json: answer
+      end
       
     end
 
