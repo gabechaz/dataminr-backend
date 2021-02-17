@@ -44,6 +44,6 @@ end
     end
 
     def user_params
-      params.require(:user).permit(:name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :password)
+      params.permit(:name, :age, :ethnicity, :gender_identity, :political_party, :location, :religion, :currency, :username, :password, :wallet)
     end
 end
