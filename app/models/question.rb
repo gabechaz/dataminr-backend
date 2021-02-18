@@ -27,29 +27,17 @@ class Question < ApplicationRecord
         # byebug
     end
 
-    def option_2_count
-       x =  self.answers.select do |answer|
-            answer.response == 'option2'
-        end
-        x.length
-        byebug
-    end
-
+    
 
     def over_30_opt_1
       answers = self.answers.select { |answer| answer.response == 'option1'}
       over_30 = answers.select do |answer| 
         answer.user.age <= 30
       end
-      over_30.length
+      over_30.length 
     end
 
-    def over_30_opt_2
-        answers = self.answers.select { |answer| answer.response == 'option2'}
-        over_30 = answers.select do |answer| 
-          answer.user.age < 30
-        end
-      end
+
 
     def male_opt_1
         answers = self.answers.select { |answer| answer.response == 'option1'}

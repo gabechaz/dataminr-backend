@@ -10,6 +10,11 @@ class AnswersController < ApplicationController
       
     end
 
+    def destroy
+      answer = Answer.find(params[:id])
+      answer.destroy
+    end
+
     def show
         answer = Answer.find(params[:id])
         render json: answer
